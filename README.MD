@@ -1,42 +1,79 @@
-SpendingTracker (Python)
-Overview
+💰 CSV Spending Tracker  
+Python | CSV | File Handling | Input Validation | CLI
 
-This is a command-line spending tracker written in Python.
-It allows users to record transactions, track spending by category, and store data persistently using a CSV file.
+A command-line **Spending Tracker** built with **Python** using **CSV files** for persistent storage.  
+The application allows users to record, view, edit, delete, and summarise financial transactions, with a strong focus on **clean data handling**, **validation**, and **reliable program flow**.
 
-This project was built while self-teaching Python to practice file handling, data validation, program structure, and OOP principles.
+This project demonstrates practical backend fundamentals without relying on a database, highlighting solid use of structured files and defensive programming.
 
----Features---
-Load transaction data from a CSV file on startup.
-Create the CSV file and last ID file if they do not exist.
-Add new transactions with date, category, amount, and optional description.
-Edit existing transactions by TransactionID.
-Delete transactions by TransactionID.
-View all transactions in a readable format.
-View spending summaries filtered by category.
-Validate user input for dates, numbers, and text to prevent errors.
+---
 
----Technologies Used---
-Python
-CSV (csv.DictReader / csv.DictWriter)
-Object-Oriented Programming (OOP)
-Custom input validation functions (error_handling.py)
+## 🔍 Project Overview
 
----How It Works---
-The program loads transactions from a CSV file into a list of dictionaries when it starts.
-Each transaction has a unique TransactionID stored persistently in last_id_number.txt.
-Users can add, edit, or delete transactions, which updates the CSV file automatically.
-Transactions can be filtered by category to view spending summaries.
-Input validation prevents invalid entries from breaking the program.
+The CSV Spending Tracker enables users to manage income and expenses through a simple CLI interface.
 
----What I Learned---
-How to read/write CSV files safely and persist data.
-How to structure a small Python project using classes and multiple files.
-Handling edge cases such as empty data, invalid input, and non-existent IDs.
-The importance of breaking down complex logic (like editing a transaction) into smaller steps.
+Transactions are:
+- Stored persistently in a CSV file
+- Assigned unique transaction IDs
+- Validated before being saved
+- Editable and removable by ID
 
----Possible Improvements---
-Allow editing multiple fields at once.
-Add sorting by date, amount, or category.
-Move storage from CSV to a database like SQLite for larger data.
-Add reporting features like monthly or yearly summaries
+The system also provides category-based summaries to help users analyse spending patterns.
+
+---
+
+## ✅ Key Features
+
+### 📥 Transaction Management (CRUD)
+- Add transactions with:
+  - Date
+  - Category
+  - Amount
+  - Optional description
+- View all stored transactions
+- Edit existing transactions by Transaction ID
+- Delete transactions safely by Transaction ID
+
+---
+
+### 📊 Spending Summaries
+- View spending by category
+- Filter transactions dynamically
+- Display formatted transaction data for clarity
+
+---
+
+### 📁 File Handling & Persistence
+- Transactions stored in a CSV file
+- Automatic loading of existing data on startup
+- Transaction IDs tracked using a separate file to prevent duplicates
+- CSV files rewritten safely after edits and deletions
+
+---
+
+### 🛡️ Validation & Error Handling
+- Input validation for:
+  - Integers
+  - Dates (DD/MM/YYYY)
+  - Monetary values (rounded correctly)
+- Graceful handling of:
+  - Invalid input
+  - Non-existent transaction IDs
+  - Empty datasets
+- Defensive programming to prevent crashes and corrupted data
+
+---
+
+## 🧱 Tech Stack
+- **Python 3**
+- **CSV (file-based storage)**
+- **Command Line Interface (CLI)**
+
+---
+
+## ▶️ Running the Project
+
+1. Ensure Python 3 is installed
+2. Run the application:
+```bash
+python spending.py
